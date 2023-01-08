@@ -28,4 +28,3 @@ function operate(num1, operator, num2) {
     }
 }
 
-console.log(operate(2, '/', 4));
