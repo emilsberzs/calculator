@@ -4,7 +4,7 @@ let previous_number =[]; //Previous number to call operate on
 let result = ''; //Stores the result of calculation
 const screen = document.getElementById('screen');
 const button_ids = ['7', '8', '9', 'divide', '4', '5', '6',
-    'multiply', '1', '2', '3', 'subtract', 'point', '0', 'equals', 'add']
+    'multiply', '1', '2', '3', 'subtract', 'point', '0', 'equals', 'add','clear','delete']
 
 
 function add(a, b) {
@@ -76,6 +76,20 @@ function buttonPress() {
                 console.log('operator: ' + operator);
                 console.log("current: " + current_number)
                 current_number = operate(+previous_number.join(''), operator, +current_number.join(''))
+                previous_number = current_number;
+            } else if (document.getElementById(button).className == 'clear_all') {
+                console.log('CLEAR ALL')
+                current_number = [];
+                previous_number = [];
+                operator = '' ;
+                populate(current_number)
+                console.log('previous: ' + previous_number)
+                console.log('operator: ' + operator);
+                console.log("current: " + current_number)
+            } else if(document.getElementById(button).className == 'backspace') {
+                console.log('pop')
+                current_number.pop()
+                populate(current_number.join(''))
             }
         });
     })
