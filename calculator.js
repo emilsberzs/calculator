@@ -89,6 +89,7 @@ function buttonPress() {
                 current_number = operate(+previous_number, operator, +current_number)
                 previous_number = current_number;
                 current_number = [];
+                operator = '';
                 console.log('previous at equal:' + previous_number);
                 console.log('operator at operator: ' + operator);
                 console.log('current at equal: ' + current_number);
